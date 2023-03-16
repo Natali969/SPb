@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>howeuh</title>
+     <!-- тег отображается, если js в браузере отключен -->
+     <noscript>On JS!!!</noscript>
+     <meta charset="UTF-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+     <title>Quiz</title>
+
+     <link rel="sylesheet" href="styles.css" />
+</head>
+<body>
+       <h2>What JS can Do?</h2>
+       <p id="demo">Привет</p>
+
+       <button type="button" onclick='document.getElementById("demo").innerHTML =
+       "Hello, JS!"'>Press</button>
+    
+    <!-- можно подключить сторонний файл, а также js скрипт -->  
+       <script src="main.js">
+      // это комментарий
+
+      /* и это
+      комментарий */
+      
+          //document.write("JS says Hello!");
+          //console.log("JS says Hello!!!");
+          //console.error("JS says Hello!!!");
+       </script>
+</body>
+</html>
