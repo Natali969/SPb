@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+body {
+	margin: 0;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.quiz {
+	margin: 0 auto;
+	width: 600px;
+}
+
+.quiz-questions,
+.quiz-indicator,
+.quiz-result {
+	margin-bottom: 20px;
+}
+
+.quiz-questions-item,
+.quiz-result-item {
+	margin-bottom: 20px;
+
+	&__question {
+		font-size: 20px;
+		margin-bottom: 20px;
+	}
+
+	&__answers {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+}
+
+.quiz-indicator {}
+
+.quiz-result {
+	display: none;
+}
+
+.btn-next {}
+
+.btn-restart {
+	display: none;
+}
+
+.question--hidden,
+.indicator--hidden,
+.btn-next--hidden {
+	display: none;
+}
+
+.indicator--visible,
+.btn-restart--visible {
+	display: block;
+}
+
+answer--invalid {
+	color: red;
+}
+
+.answer--valid {
+	color: green;
+}
