@@ -2,7 +2,9 @@
 const headElem = document.getElementById("head");
 const buttonsElem = document.getElementById("buttons");
 const pagesElem = document.getElementById("pages");
+const btnRestart = document.getElementById('restart');
 
+btnRestart.setAttribute("hidden", 'true');
 //Класс, который представляет сам тест
 class Quiz
 {
@@ -249,6 +251,7 @@ function Update()
 		buttonsElem.innerHTML = "";
 		headElem.innerHTML = quiz.results[quiz.result].text;
 		pagesElem.innerHTML = "Очки: " + quiz.score;
+		btnRestart.removeAttribute("hidden");
 	}
 }
 
