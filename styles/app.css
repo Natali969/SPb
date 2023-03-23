@@ -61,6 +61,7 @@ body, html
 	padding: 5px;
 }
 
+
 .button
 {
 	border-radius: 10px;
@@ -116,9 +117,6 @@ body, html
   .button:hover:after {
     transition: 0s ease opacity .4s, .2s ease height .4s, .2s ease width .6s;
   }
-  .button:hover {
-    background: rgba(255, 255, 255, .2);
-  }
 
 .button_wrong 
 {
@@ -146,7 +144,7 @@ body, html
     bottom: 0;
     overflow: hidden;
     background-color: #21D4FD;
-    background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+    background-image: linear-gradient(19deg, #14d60d 0%, #B721FF 100%);
     z-index: 1001;
     color: #eee;
   }
@@ -185,7 +183,6 @@ body, html
 	cursor: pointer;
 
 	text-decoration: none;
-    /* display: inline-block; */
     padding: 20px 30px;
     margin: 10px 20px;
     position: relative;
