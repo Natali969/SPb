@@ -7,7 +7,7 @@ const btnRestart = document.getElementById('restart');
 const headImage = document.getElementById("img");
 
 btnRestart.setAttribute("hidden", 'true');
-headElem.setAttribute("hidden", 'true');
+// headElem.setAttribute("hidden", 'true');
 //Класс, который представляет сам тест
 class Quiz
 {
@@ -224,7 +224,7 @@ function Update()
 	if(quiz.current < quiz.questions.length) 
 	{
 		//Если есть, меняем вопрос в заголовке
-		// headElem.innerHTML = quiz.questions[quiz.current].text;
+		headElem.innerHTML = quiz.questions[quiz.current].text;
 
 		//Удаляем старые варианты ответов
 		buttonsElem.innerHTML = "";
