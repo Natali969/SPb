@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Arvo:700);
+@import url(https://fonts.googleapis.com/css?family=Seaweed+Script);
 body, html {
     margin: 0;
     background-repeat: no-repeat;
@@ -21,9 +23,27 @@ body, html {
 	text-align: center;
 }
 
-.quiz__body
-{
-	margin: 10px;
+.plate {
+  height: 210px;
+  width: 400px;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.shadow {
+  color: #fff;
+  font-style: italic;
+  text-align: center;
+  text-shadow: 0 1px 1px #fff;
+}
+
+.script span {
+  background-color: #222;
+  padding: 0 0.3em;
+}
+.text1 {
+  font-size: 60px;
 }
 
 .button {
