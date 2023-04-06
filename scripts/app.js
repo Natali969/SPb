@@ -1,4 +1,4 @@
-// import { createConnection } from "mysql2";
+// import createConnection from "mysql80";
 const headElem = document.getElementById("head");
 const buttonsElem = document.getElementById("buttons");
 const pagesElem = document.getElementById("pages");
@@ -115,76 +115,88 @@ class Result {
 const results =
 	[
 		new Result("Вам многому нужно еще научиться", 0),
-		new Result("Вы уже неплохо разбираетесь", 2),
-		new Result("Ваш уровень выше среднего", 4),
-		new Result("Вы в совершенстве знаете тему", 6)
+		new Result("Вы уже неплохо разбираетесь", 4),
+		new Result("Ваш уровень выше среднего", 7),
+		new Result("Вы в совершенстве знаете тему", 10)
 	];
 
-// const connection = createConnection({
-// 	host: "localhost",
-// 	user: "sqluser",
-// 	database: "spb",
-// 	password: "password"
-//   });
-
-//   const sql = `SELECT * FROM question`;
-//   console.log(sql);
-
-//   connection.query(sql, function(err, results) {
-// 	  if(err) console.log(err);
-// 	  console.log(results);
-//   });
-
-//connection.end();
 //Массив с вопросами
 const questions =
 	[
 		new Question("Чем облицованы стены Исаакиевского собора?",
 			[
 				new Answer("Гранитом", 0),
-				new Answer("Мрамором", 0),
-				new Answer("Песчаником", 1),
+				new Answer("Мрамором", 1),
+				new Answer("Песчаником", 0),
 				new Answer("Кварцитом", 0)
 			]),
 
-		new Question("2 * 2 = ",
+		new Question("Кому посвящена конная статуя Медный всадник, являющаяся одним из символов Санкт-Петербурга?",
 			[
-				new Answer("2", 0),
-				new Answer("3", 0),
-				new Answer("4", 1),
-				new Answer("0", 0)
+				new Answer("Александру Суворову", 0),
+				new Answer("Петру I", 1),
+				new Answer("Борису Годунову", 0),
+				new Answer("Михаилу Кутузову", 0)
 			]),
 
-		new Question("2 / 2 = ",
+		new Question("Какая достопримечательность Санкт-Петербурга, одновременно являющаяся одним из его символов, расположена на Заячьем острове?",
 			[
-				new Answer("0", 0),
-				new Answer("1", 1),
-				new Answer("2", 0),
-				new Answer("3", 0)
+				new Answer("Петропавловская крепость", 1),
+				new Answer("Адмиралтейство", 0),
+				new Answer("Медный всадник", 0),
+				new Answer("Соборная мечеть", 0)
 			]),
 
-		new Question("2 - 2 = ",
+		new Question("Какой мост в Санкт-Петербурге украшают четыре конных статуи?",
 			[
-				new Answer("0", 1),
-				new Answer("1", 0),
-				new Answer("2", 0),
-				new Answer("3", 0)
+				new Answer("Инженерный мост", 0),
+				new Answer("Троицкий мост", 0),
+				new Answer("Аничков мост", 1),
+				new Answer("Литейный мост", 0)
 			]),
 
-		new Question("2 + 2 * 2 = ",
+		new Question("Какой из крупнейших музеев Санкт-Петербурга отмечает «День Кота», посвященный кошкам, живущим в нём?",
 			[
-				new Answer("4", 0),
-				new Answer("6", 1),
-				new Answer("8", 0),
-				new Answer("10", 0)
+				new Answer("Кунсткамера", 0),
+				new Answer("Зоологический музей", 0),
+				new Answer("Эрмитаж", 1),
+				new Answer("Юсуповский дворец", 0)
 			]),
 
-		new Question("2 + 2 / 2 = ",
+		new Question("Памятник какой русской императрице расположен в садике перед Александринским театром?",
 			[
-				new Answer("1", 0),
-				new Answer("2", 0),
-				new Answer("3", 1),
-				new Answer("4", 0)
+				new Answer("Елизавете I", 0),
+				new Answer("Екатерине I", 0),
+				new Answer("Екатерине II", 1),
+				new Answer("Анне Иоанновне", 0)
+			]),
+		new Question("Как называется самая главная река города?",
+			[
+				new Answer("Большая Невка", 0),
+				new Answer("Фонтанка", 0),
+				new Answer("Нева", 1),
+				new Answer("Мойка", 0)
+			]),
+		new Question("Как называют колонны на Стрелке Васильевского острова?",
+			[
+				new Answer("Красные колонны", 0),
+				new Answer("Ростральные колонны", 1),
+				new Answer("Колонны Славы", 0),
+				new Answer("Морейские колонны", 0)
+			]),
+		new Question("Какие существа украшают Банковский мост?",
+			[
+				new Answer("Сфинксы", 0),
+				new Answer("Орлы", 0),
+				new Answer("Грифоны", 1),
+				new Answer("Кони", 0)
+			]),
+		new Question("Какова высота Адмиралтейского шпиля в городе Санкт-Петербурге?",
+			[
+				new Answer("72 метра", 1),
+				new Answer("70 метров", 0),
+				new Answer("75 метров", 0),
+				new Answer("80 метров", 0)
 			])
 	];
 
@@ -223,9 +235,9 @@ function Update() {
 	}
 	else {
 		buttonsElem.innerHTML = "";
-		if (quiz.score<3){
+		if (quiz.score<5){
 			questImg.src = "unsuccess.png";
-		} else if (quiz.score>2 && quiz.score<5) {
+		} else if (quiz.score>4 && quiz.score<8) {
 			questImg.src = "not_bad.png";
 		}
 		else {
