@@ -1,4 +1,3 @@
-// import { createConnection } from "mysql2";
 const headElem = document.getElementById("head");
 const buttonsElem = document.getElementById("buttons");
 const pagesElem = document.getElementById("pages");
@@ -119,27 +118,11 @@ class Result {
 const results =
 	[
 		new Result("Вам многому нужно научиться", 0),
-		new Result("Вы уже неплохо разбираетесь", 2),
-		new Result("Ваш уровень выше среднего", 4),
-		new Result("Вы в совершенстве знаете тему", 6)
+		new Result("Вы уже неплохо разбираетесь", 4),
+		new Result("Ваш уровень выше среднего", 7),
+		new Result("Вы в совершенстве знаете тему", 10)
 	];
 
-// const connection = createConnection({
-// 	host: "localhost",
-// 	user: "sqluser",
-// 	database: "spb",
-// 	password: "password"
-//   });
-
-//   const sql = `SELECT * FROM question`;
-//   console.log(sql);
-
-//   connection.query(sql, function(err, results) {
-// 	  if(err) console.log(err);
-// 	  console.log(results);
-//   });
-
-//connection.end();
 //Массив с вопросами
 const questions =
 	[
@@ -153,56 +136,97 @@ const questions =
 
 		new Question("",
 			[
-				new Answer("2", 0),
-				new Answer("3", 0),
-				new Answer("4", 1),
-				new Answer("0", 0)
+				new Answer("Заячий остров", 0),
+				new Answer("Невский проспект", 0),
+				new Answer("Стрелка Васильевского острова", 1),
+				new Answer("Нахимовское военно-морское училище", 0)
 			]),
 
 		new Question("",
 			[
-				new Answer("0", 0),
-				new Answer("1", 1),
-				new Answer("2", 0),
-				new Answer("3", 0)
+				new Answer("Петергоф", 0),
+				new Answer("Летний сад", 1),
+				new Answer("Юсуповский сад", 0),
+				new Answer("Ботанический сад", 0)
 			]),
 
 		new Question("",
 			[
-				new Answer("0", 1),
-				new Answer("1", 0),
-				new Answer("2", 0),
-				new Answer("3", 0)
+				new Answer("Зимний дворец", 1),
+				new Answer("Юсуповский дворец", 0),
+				new Answer("Чесменский дворец", 0),
+				new Answer("Михайловский дворец", 0)
 			]),
 
 		new Question("",
 			[
-				new Answer("4", 0),
-				new Answer("6", 1),
-				new Answer("8", 0),
-				new Answer("10", 0)
+				new Answer("Таврический дворец", 0),
+				new Answer("Екатерининский дворец", 1),
+				new Answer("Эрмитаж", 0),
+				new Answer("Большой Петергофский дворец", 0)
 			]),
 
 		new Question("",
 			[
-				new Answer("1", 0),
-				new Answer("2", 0),
-				new Answer("3", 1),
-				new Answer("4", 0)
+				new Answer("Дмитриевский собор", 0),
+				new Answer("Смольный собор", 0),
+				new Answer("Троице-Измайловский собор", 1),
+				new Answer("Чесменская церковь", 0)
+			]),
+		new Question("",
+			[
+				new Answer("Крепость Орешек", 0),
+				new Answer("Кроншлот", 0),
+				new Answer("Адмиралтейство", 0),
+				new Answer("Петропавловская крепость", 1)
+			]),
+		new Question("",
+			[
+				new Answer("Дом Зингера", 1),
+				new Answer("Дом Коллана", 0),
+				new Answer("Магазин купцов Елисеевых", 0),
+				new Answer("Особняк Чаева", 0)
+			]),
+		new Question("",
+			[
+				new Answer("Зимний сад", 0),
+				new Answer("Летний сад", 0),
+				new Answer("Петергофский сад", 1),
+				new Answer("Гатчинский сад", 0)
+			]),
+		new Question("",
+			[
+				new Answer("Базилика Святой Екатерины", 0),
+				new Answer("Архангельский собор", 0),
+				new Answer("Собор Святой Софии", 0),
+				new Answer("Александро-Невская лавра", 1)
 			])
 	];
 
 //Сам тест
 const quiz = new Quiz(1, questions, results);
-
+const images =
+[
+'исаакиевский.jpeg',
+'стрелка.jpg',
+'летний_сад.jpg',
+'зимний_дворец.jpg',
+'екатерининский.jpg',
+'троицкий.jpg',
+'петропавловка.jpg',
+'зингер.jpg',
+'петергоф.jpg',
+'лавра.jfif'
+];
 Update();
-
 //Обновление теста
 function Update() {
 	//Проверяем, есть ли ещё вопросы
 	if (quiz.current < quiz.questions.length) {
 		//Если есть, меняем вопрос в заголовке
 		questImg.border = 5;
+		// questImg.src = "стрелка.jpg";
+		questImg.src = images[quiz.current];
 		headElem.innerHTML = quiz.questions[quiz.current].text;
 
 		//Удаляем старые варианты ответов
@@ -229,9 +253,9 @@ function Update() {
 	else {
 		//Если это конец, то выводим результат
 		buttonsElem.innerHTML = "";
-		if (quiz.score<3){
+		if (quiz.score<5){
 			questImg.src = "unsuccess.png";
-		} else if (quiz.score>2 && quiz.score<5) {
+		} else if (quiz.score>4 && quiz.score<8) {
 			questImg.src = "not_bad.png";
 		}
 		else {
